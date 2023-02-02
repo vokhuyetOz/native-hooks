@@ -25,7 +25,6 @@ Explain the **motivation** for making this change: here are some points to help 
 | ------- | :---------: |
 | iOS     |    ✅❌     |
 | Android |    ✅❌     |
-| Web     |    ✅❌     |
 
 ## Checklist
 
