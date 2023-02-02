@@ -1,8 +1,6 @@
 import {useDimensions} from './useDimensions'
 import {useAppState, AppStateStatus} from './useAppState'
 import {useBackHandler} from './useBackHandler'
-import {useCameraRoll} from './useCameraRoll'
-import {useClipboard} from './useClipboard'
 import {useAccessibilityInfo} from './useAccessibilityInfo'
 import {useKeyboard} from './useKeyboard'
 import {useInteractionManager} from './useInteractionManager'
@@ -18,8 +16,6 @@ export {
   useAppState,
   AppStateStatus,
   useBackHandler,
-  useCameraRoll,
-  useClipboard,
   useAccessibilityInfo,
   useKeyboard,
   useInteractionManager,
