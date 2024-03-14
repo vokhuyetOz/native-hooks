@@ -58,7 +58,7 @@ export function useImageDimensions(
       }
 
       throw new Error('not implemented')
-    } catch (error) {
+    } catch (error: any) {
       setResult({error, loading: false})
     }
   }, [source])

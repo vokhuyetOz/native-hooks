@@ -5,15 +5,14 @@ export function useAppState() {
   const currentState = AppState.currentState
   const [appState, setAppState] = useState(currentState)
 
-  function onChange(newState: AppStateStatus) {
-    setAppState(newState)
-  }
-
   useEffect(() => {
-    AppState.addEventListener('change', onChange)
+    function onChange(newState: AppStateStatus) {
+      setAppState(newState)
+    }
 
+    const subscription = AppState.addEventListener('change', onChange)
     return () => {
-      AppState.removeEventListener('change', onChange)
+      subscription.remove()
     }
   }, [])
 

@@ -21,9 +21,14 @@ function useAccessibilityStateListener(
     }
 
     AccessibilityInfo[initializerName]().then(setIsEnabled)
-    AccessibilityInfo.addEventListener(eventName, setIsEnabled)
+    const subscription = AccessibilityInfo.addEventListener(
+      eventName,
+      setIsEnabled,
+    )
 
-    return () => AccessibilityInfo.removeEventListener(eventName, setIsEnabled)
+    return () => {
+      subscription.remove()
+    }
   }, [eventName, initializerName])
 
   return isEnabled

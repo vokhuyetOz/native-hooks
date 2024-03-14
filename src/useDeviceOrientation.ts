@@ -32,10 +32,10 @@ export function useDeviceOrientation() {
   }, [])
 
   useEffect(() => {
-    Dimensions.addEventListener('change', onChange)
+    const subscription = Dimensions.addEventListener('change', onChange)
 
     return () => {
-      Dimensions.removeEventListener('change', onChange)
+      subscription.remove()
     }
   }, [orientation.portrait, orientation.landscape, onChange])
 
